@@ -1,0 +1,20 @@
+{
+  "name": "wikicite-data",
+  "version": "0.0.1",
+  "description": "Extract and transform bibliographic data from Wikidata",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.0",
+    "wikidata-filter": "^2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wikidata",
+    "wikicite"
+  ],
+  "author": "Jakob Voss <voss@gbv.de>",
+  "license": "MIT"
+}
