@@ -1,2 +1,8 @@
 node_modules
 build
+
+# don't include data files
+*.bz2
+*.gz
+*.classes.csv
+*.labels.ndjson
