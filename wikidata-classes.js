@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 
-const split = require('split')
-const filter = require('wikidata-filter/lib/filter')
-const classesFilter = require('./lib/classes_filter')
+/**
+ * Extract item, superclass pairs in CSV format from Wikidata dump.
+ */
 
-process.stdin
-.pipe(split())
-.pipe(filter(classesFilter))
+const { parser, filter } = require('wikidata-filter')
+const { simplify } = require('wikidata-sdk')
+
+parser(process.stdin)
+.filter(filter({type: 'item'}))
+.filter(item =>
+  item.claims && item.claims.P279
+    ? simplify.propertyClaims(item.claims.P279)
+    .map(qid => item.id + ',' + qid)
+    .join('\n') + '\n'
+  : null
+)
 .pipe(process.stdout)

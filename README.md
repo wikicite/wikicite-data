@@ -6,17 +6,19 @@ This repository contains scripts to extract, transform, and analyze bibliographi
 
 ## Overview
 
-Bibliographic data can be extracted from Wikidata dumps which are provided weekly at <https://dumps.wikimedia.org/wikidatawiki/entities/> as documented at <https://dumps.wikimedia.org/wikidatawiki/entities/>. Old dumps are hosted at Internet Archive. 
+Bibliographic data can be extracted from Wikidata dumps which are provided weekly at <https://dumps.wikimedia.org/wikidatawiki/entities/> as documented at <https://www.wikidata.org/wiki/Wikidata:Database_download>. Old JSON dumps are archived at Internet Archive starting from October 2014. Then Wikidata JSON dump format was introduced in July 2014 so data from between February 2013 until would require additional preprocessing.
 
-Processing these dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for WikiCite applications.
+Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata.
+
 
 ## Requirements
 
-The current scripts make use of several technologies. A later version may be simplified to reduce number of requirements
+The current scripts require the following technologies:
 
-* Make
-* bash
+* standard Unix command line tools (`bash`, `make`, `wget`)
+* compression tools (`gzip`, `bzip2`)
 * node >= 6.4.0 and npm
+    * npm packages as listed in `packages.json`
 * jq
 
 ## Usage
@@ -52,6 +54,8 @@ The list of publication types is sorted and commited for reference.
 All bibliographic items, with simplified truthy statements:
 
     make 20170626/wikidata-20170626-all.wikicite.ndjson.bz2
+
+Claims with special value "unknown" are not included by now!
 
 ## Extract labels
 

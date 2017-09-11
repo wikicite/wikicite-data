@@ -2,10 +2,14 @@
   "name": "wikicite-data",
   "version": "0.0.1",
   "description": "Extract and transform bibliographic data from Wikidata",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbv/wikicite-data"
+  },
   "dependencies": {
     "request": "^2.0",
-    "wikidata-filter": "^2.0"
+    "wikidata-filter": "^2.1.0",
+    "wikidata-sdk": "^5.2.5"
   },
   "devDependencies": {},
   "scripts": {

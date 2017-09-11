@@ -2,9 +2,10 @@
 
 const split = require('split')
 
+// get root item qid(s) as command line arguments
 var nodes = process.argv.slice(2)
 
-// build index
+// build index by reading CSV (child,parent) from stdin
 var children = {}
 process.stdin
     .pipe(split())
