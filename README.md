@@ -2,7 +2,7 @@
 
 This repository contains scripts to extract, transform, and analyze bibliographic data from Wikidata.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-CC0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Overview
 
@@ -86,4 +86,4 @@ and [wikidata-sdk](https://www.npmjs.com/package/wikidata-sdk) by Maxime Lathuil
 
 ## License
 
-[MIT](LICENSE.md)
+[CC0](LICENSE.md)
