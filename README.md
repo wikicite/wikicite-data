@@ -8,17 +8,15 @@ This repository contains scripts to extract, transform, and analyze bibliographi
 
 Bibliographic data can be extracted from Wikidata dumps which are provided weekly at <https://dumps.wikimedia.org/wikidatawiki/entities/> as documented at <https://www.wikidata.org/wiki/Wikidata:Database_download>. Old JSON dumps are archived at Internet Archive starting from October 2014. Then Wikidata JSON dump format was introduced in July 2014 so data from between February 2013 until would require additional preprocessing.
 
-Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata.
-
+Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata. The repository further contains checksums, lists of publication types, and statistics derived from Wikidata dumps. Full dumps *are not included* but must be shared by other means (IPFS anyone?). 
 
 ## Requirements
 
 The current scripts require the following technologies:
 
-* standard Unix command line tools (`bash`, `make`, `wget`)
-* compression tools (`gzip`, `bzip2`)
-* node >= 6.4.0 and npm
-    * npm packages as listed in `packages.json`
+* standard Unix command line tools (`bash`, `make`, `wget`, `gzip`, `zcat`)
+* node >= 6.4.0, npm, and packages listed in `packages.json` [![Node](https://img.shields.io/badge/node-%3E=%20v6.4.0-brightgreen.svg)](http://nodejs.org)
+    * [wikidata-filter](https://www.npmjs.com/package/wikidata-filter) and [wikidata-sdk](https://www.npmjs.com/package/wikidata-sdk) by Maxime Lathuilière
 * jq
 
 ## Usage
@@ -29,13 +27,19 @@ The `download-dump` script can be used to download a full, compressed JSON dump 
 
     ./download-dump 20170626
 
+Old dumps must be downloaded manually from Internet Archive.
+
 A MD5 hash of the extracted dump can be computed like this:
 
     make 20170626/wikidata-20170626-all.md5
 
 The MD5 hash is commited in git for reference.
 
-## Extract publication classes
+The number of items can be counted as following, it is also committed in git:
+
+    make 20170626/wikidata-20170626-all.ids.count
+
+## Extract publication types
 
 To find out which Wikidata items refer to bibliographic objects, we must extract all subclasses of [Q732577](http://www.wikidata.org/entity/Q732577) (publication). The class hierarchy must be derived from the JSON dump because it will likely have been changed in meantime.
 
@@ -51,11 +55,14 @@ The list of publication types is sorted and commited for reference.
 
 ## Extract bibliographic items
 
-All bibliographic items, with simplified truthy statements:
+Extract all bibliographic items, with simplified truthy statements, based on the list of publication types:
 
-    make 20170626/wikidata-20170626-all.wikicite.ndjson.bz2
+    make 20170626/wikidata-20170626-all.wikicite.ndjson.gz
 
-Claims with special value "unknown" are not included by now!
+**FIXME:**
+
+* Author names are not sorted yet
+* Claims with special value "unknown" are not included although this might be useful
 
 ## Extract labels
 
@@ -69,20 +76,15 @@ Uncompressed label files tend do get large so compression or reduction to a sele
 
 To be done (especially CSL-JSON and MARCXML)
 
-## Sources
-
-[![Node](https://img.shields.io/badge/node-%3E=%20v6.4.0-brightgreen.svg)](http://nodejs.org)
-
-Source code is based and makes use of the modules [wikidata-filter](https://www.npmjs.com/package/wikidata-filter)
-and [wikidata-sdk](https://www.npmjs.com/package/wikidata-sdk) by Maxime Lathuilière.
-
-## Alternatives
+## See also
 
 * Live data can be queried from Wikidata with SPARQL at <https://query.wikidata.org/>.
 
-* Zotero can convert Wikidata items to several bibliographic data formats 
+* [Citation.js](https://citation.js.org/) can convert Wikidata items to several bibliographic data formats
 
-* ...
+* [Zotero can convert Wikidata items](https://www.wikidata.org/wiki/Wikidata:Zotero) to several bibliographic data formats
+
+* <http://wikicite.org/>
 
 ## License
 

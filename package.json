@@ -7,11 +7,12 @@
     "url": "https://github.com/gbv/wikicite-data"
   },
   "dependencies": {
-    "request": "^2.0",
     "wikidata-filter": "^2.1.0",
     "wikidata-sdk": "^5.2.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

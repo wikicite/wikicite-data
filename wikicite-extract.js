@@ -19,7 +19,7 @@ fs.createReadStream(process.argv[2])
   .on('close', () => {
     parser(process.stdin)
     .filter(itemFilter(classes))
-    .filter(filter({'simplified':true}))
+    .filter(filter({'simplified': true}))
     .filter(serializer)
     .pipe(process.stdout)
   })
