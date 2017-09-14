@@ -4,6 +4,8 @@ This repository contains scripts to extract, transform, and analyze bibliographi
 
 [![License](https://img.shields.io/badge/license-CC0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
+*the current state of this project is experimental*
+
 ## Overview
 
 Bibliographic data can be extracted from Wikidata dumps which are provided weekly at <https://dumps.wikimedia.org/wikidatawiki/entities/> as documented at <https://www.wikidata.org/wiki/Wikidata:Database_download>. Old JSON dumps are archived at Internet Archive starting from October 2014. Then Wikidata JSON dump format was introduced in July 2014 so data from between February 2013 until would require additional preprocessing.
@@ -47,7 +49,7 @@ First extract all truthy subclass-of statements:
 
     make 20170626/wikidata-20170626-all.classes.csv
 
-Then get all subclasses of Q732577:
+Then get all subclasses of Q732577 and Q191067 (the latter was missing as subclass of the former until mid-September 2017):
 
     make 20170626/wikidata-20170626-all.pubtypes
 
@@ -83,6 +85,8 @@ To be done (especially CSL-JSON and MARCXML)
 * [Citation.js](https://citation.js.org/) can convert Wikidata items to several bibliographic data formats
 
 * [Zotero can convert Wikidata items](https://www.wikidata.org/wiki/Wikidata:Zotero) to several bibliographic data formats
+
+* [librarybase-scripts](https://github.com/harej/librarybase-scripts) by James Hare for bibliographic metadata work on Wikidata
 
 * <http://wikicite.org/>
 
