@@ -19,7 +19,7 @@ LOGFILE=make.log
 	./subclasses.js Q732577 Q191067 < $< | sort > $@ && echo $@ >> ${LOGFILE}
 
 # bibliographic items
-%.wikicite.ndjson.gz: %.json.gz %.pubtypes
+%.publications.ndjson.gz: %.json.gz %.pubtypes
 	zcat $< | ./wikicite-extract.js $(basename $(basename $<)).pubtypes \
 		| gzip -9 > $@ && echo $@ >> ${LOGFILE}
 

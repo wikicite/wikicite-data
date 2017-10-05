@@ -37,7 +37,7 @@ A MD5 hash of the extracted dump can be computed like this:
 
 The MD5 hash is commited in git for reference.
 
-The number of items can be counted as following, it is also committed in git:
+The number of entities ina dump can be counted as following, it is also committed in git:
 
     make 20170626/wikidata-20170626-all.ids.count
 
@@ -59,7 +59,11 @@ The list of publication types is sorted and commited for reference.
 
 Extract all bibliographic items, with simplified truthy statements, based on the list of publication types:
 
-    make 20170626/wikidata-20170626-all.wikicite.ndjson.gz
+    make 20170626/wikidata-20170626-all.publications.ndjson.gz
+
+The number of bibliographic items is counted and committed in git
+
+    make 20170626/wikidata-20170626-all.publications.ids.count
 
 **FIXME:**
 
