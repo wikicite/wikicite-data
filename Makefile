@@ -29,6 +29,13 @@ LOGFILE=make.log
 		jq -c '{id:.id,labels:(.labels|map_values(.value))}' > $@ \
 	&& echo $@ >> ${LOGFILE} 
 
+# create summaries
+summary:
+	./summaries.pl
+all.ids.count:
+	./summaries.pl
+pubs.ids.count:
+	./summaries.pl
 
 # clean up JavaScript code
 standard:
