@@ -92,6 +92,8 @@ To be done (especially CSL-JSON and MARCXML)
 
 * [Zotero can convert Wikidata items](https://www.wikidata.org/wiki/Wikidata:Zotero) to several bibliographic data formats
 
+* [Parallel processing of Wikidata JSON dumps](https://lucaswerkmeister.de/posts/2017/09/03/wikidata+dgsh/) by Lucas Werkmeister could speed up the processing
+
 * [librarybase-scripts](https://github.com/harej/librarybase-scripts) by James Hare for bibliographic metadata work on Wikidata
 
 * <http://wikicite.org/>
