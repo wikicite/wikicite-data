@@ -37,6 +37,9 @@ all.ids.count:
 pubs.ids.count:
 	./summaries.pl
 
+dataflow.png: dataflow.dot
+	dot dataflow.dot -Tpng -odataflow.png
+
 # clean up JavaScript code
 standard:
 	./node_modules/standard/bin/cmd.js --fix *.js lib/*.js

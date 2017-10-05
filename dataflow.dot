@@ -1,0 +1,29 @@
+digraph {
+  dump[label="JSON dump",style=dotted]
+  publications[label="publications",style=dotted]
+
+  classes[style=dotted]
+
+  dump -> classes
+  dump -> MD5
+  dump -> idsCount
+  dump -> allLabels
+
+  idsCount[label="count"]
+
+  classes -> pubtypes
+  dump -> publications
+  pubtypes -> publications
+  publications -> publicationsIdsCount
+
+  publicationsIdsCount[label="count"]
+
+  publications -> linkedIds
+  
+  linkedIds[label="linked QIDs",style=dotted]
+  allLabels[label="labels",style=dotted]
+  linkedLabels[label="linked labels",style=dotted]
+
+  linkedIds -> linkedLabels
+  allLabels -> linkedLabels
+}

@@ -12,6 +12,8 @@ Bibliographic data can be extracted from Wikidata dumps which are provided weekl
 
 Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata. The repository further contains checksums, lists of publication types, and statistics derived from Wikidata dumps. Full dumps *are not included* but must be shared by other means (IPFS anyone?). 
 
+![data processing flow](dataflow.png)
+
 ## Requirements
 
 The current scripts require the following technologies:
@@ -37,7 +39,7 @@ A MD5 hash of the extracted dump can be computed like this:
 
 The MD5 hash is commited in git for reference.
 
-The number of entities ina dump can be counted as following, it is also committed in git:
+The number of entities in a dump is counted as following - it is also committed in git:
 
     make 20170626/wikidata-20170626-all.ids.count
 
@@ -61,7 +63,7 @@ Extract all bibliographic items, with simplified truthy statements, based on the
 
     make 20170626/wikidata-20170626-all.publications.ndjson.gz
 
-The number of bibliographic items is counted and committed in git
+The number of bibliographic items is counted as following - it is also committed in git:
 
     make 20170626/wikidata-20170626-all.publications.ids.count
 
