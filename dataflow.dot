@@ -18,12 +18,17 @@ digraph {
 
   publicationsIdsCount[label="count"]
 
-  publications -> linkedIds
+  publications -> linkedIds [color=grey]
   
-  linkedIds[label="linked QIDs",style=dotted]
+  linkedIds[label="linked QIDs",style=dotted,color=grey]
   allLabels[label="labels",style=dotted]
-  linkedLabels[label="linked labels",style=dotted]
+  linkedLabels[label="linked labels",style=dotted, color=grey]
 
-  linkedIds -> linkedLabels
-  allLabels -> linkedLabels
+  linkedIds -> linkedLabels [color=grey]
+  allLabels -> linkedLabels [color=grey]
+
+  publications -> bibdata [color=grey]
+  linkedLabels -> bibdata [color=grey]
+  bibdata[label="bibliographic data (CSL, RDF, MARC...)", color=grey, style=dotted]
+
 }

@@ -10,7 +10,11 @@ This repository contains scripts to extract, transform, and analyze bibliographi
 
 Bibliographic data can be extracted from Wikidata dumps which are provided weekly at <https://dumps.wikimedia.org/wikidatawiki/entities/> as documented at <https://www.wikidata.org/wiki/Wikidata:Database_download>. Old JSON dumps are archived at Internet Archive starting from October 2014. Then Wikidata JSON dump format was introduced in July 2014 so data from between February 2013 until would require additional preprocessing.
 
-Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata. The repository further contains checksums, lists of publication types, and statistics derived from Wikidata dumps. Full dumps *are not included* but must be shared by other means (IPFS anyone?). 
+Processing Wikidata dumps requires storage, processing time, and knowledge. With the scripts in this repository, Wikidata dumps can be pre-processed and provided in simplified form, more suitable for use of bibliographic data from Wikidata. The repository further contains checksums, lists of publication types, and statistics derived from Wikidata dumps. Full dumps *are not included* but must be shared by other means. 
+
+## Data processing flow
+
+The following diagram illustrates processing of Wikidata dumps to bibliographic records and summaries. Dotted parts are not included in the git repository. Grey parts have not been implemented yet.
 
 ![data processing flow](dataflow.png)
 
