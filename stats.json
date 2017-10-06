@@ -1,0 +1,36 @@
+{
+  "2014-10-20": {
+    "entities": "16408788",
+    "md5": "528ce97986542e64ab4d637ff4babdc0",
+    "publications": "53423",
+    "pubtypes": 166
+  },
+  "2015-03-30": {
+    "classes": "195295",
+    "entities": "17554608",
+    "publications": "95467",
+    "pubtypes": 195
+  },
+  "2015-09-21": {
+    "entities": "18557330",
+    "md5": "7b8e60c5ed6185f4f993cf445a808140",
+    "publications": "294548",
+    "pubtypes": 232
+  },
+  "2017-06-26": {
+    "entities": "26938400",
+    "md5": "21b5ccddae690ccd63eda16e83a1f591",
+    "pubtypes": 747
+  },
+  "2017-08-21": {
+    "entities": "33460503",
+    "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
+    "pubtypes": 713
+  },
+  "2017-09-04": {
+    "entities": "34419075",
+    "md5": "9dfa81752a41cf938609628d26bac240",
+    "publications": "6779864",
+    "pubtypes": 752
+  }
+}

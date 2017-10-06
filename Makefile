@@ -14,6 +14,9 @@ LOGFILE=make.log
 %.classes.csv: %.json.gz
 	zcat $< | ./wikidata-classes.js > $@ && echo $@ >> ${LOGFILE}
 
+%.classes.count: %.classes.csv
+	awk -F, '{print $$1;print $$2}' $< | sort | uniq | wc -l > $@
+
 # publication classes
 %.pubtypes: %.classes.csv
 	./subclasses.js Q732577 Q191067 < $< | sort > $@ && echo $@ >> ${LOGFILE}
@@ -29,9 +32,11 @@ LOGFILE=make.log
 		jq -c '{id:.id,labels:(.labels|map_values(.value))}' > $@ \
 	&& echo $@ >> ${LOGFILE} 
 
-# create summaries
-stats:
-	./summary.pl
+# create statistics
+.PHONY: stats.json
+stats: stats.json
+stats.json:
+	./stats.pl | jq -S . > $@
 
 dataflow.png: dataflow.dot
 	dot dataflow.dot -Tpng -odataflow.png
