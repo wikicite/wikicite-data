@@ -30,12 +30,8 @@ LOGFILE=make.log
 	&& echo $@ >> ${LOGFILE} 
 
 # create summaries
-summary:
-	./summaries.pl
-all.ids.count:
-	./summaries.pl
-pubs.ids.count:
-	./summaries.pl
+stats:
+	./summary.pl
 
 dataflow.png: dataflow.dot
 	dot dataflow.dot -Tpng -odataflow.png

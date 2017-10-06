@@ -7,7 +7,7 @@ sub count { local (@ARGV) = $_[0]; my $c = <>; chomp($c); $c }
 
 sub summary {
     my ($suffix, $name, $count) = @_;
-    open my $fh, ">", "$name.count.csv";
+    open my $fh, ">", "summary/$name.count.csv";
     say $fh "date,$name";
     say $fh join "\n", map { ## no critic
             my $file = "$_/wikidata-$_-$suffix";
