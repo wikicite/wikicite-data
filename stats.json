@@ -1,36 +1,68 @@
 {
   "2014-10-20": {
-    "entities": "16408788",
+    "entities": 16408788,
     "md5": "528ce97986542e64ab4d637ff4babdc0",
-    "publications": "53423",
-    "pubtypes": 166
+    "publications": {
+      "items": 53423,
+      "size": 3342391
+    },
+    "pubtypes": 166,
+    "size": 3546444139
   },
   "2015-03-30": {
-    "classes": "195295",
-    "entities": "17554608",
-    "publications": "95467",
-    "pubtypes": 195
+    "classes": 195295,
+    "entities": 17554608,
+    "md5": "7fccd26b3152123fe6d4e8b789476e09",
+    "publications": {
+      "items": 95467
+    },
+    "pubtypes": 195,
+    "size": 4393787930
   },
   "2015-09-21": {
-    "entities": "18557330",
+    "entities": 18557330,
     "md5": "7b8e60c5ed6185f4f993cf445a808140",
-    "publications": "294548",
-    "pubtypes": 232
+    "publications": {
+      "items": 294548,
+      "size": 12673380
+    },
+    "pubtypes": 232,
+    "size": 5390838831
   },
   "2017-06-26": {
-    "entities": "26938400",
+    "entities": 26938400,
     "md5": "21b5ccddae690ccd63eda16e83a1f591",
+    "publications": {},
     "pubtypes": 747
   },
   "2017-08-21": {
-    "entities": "33460503",
+    "entities": 33460503,
     "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
-    "pubtypes": 713
+    "publications": {
+      "size": 74796218
+    },
+    "pubtypes": 713,
+    "size": 16941074916
   },
   "2017-09-04": {
-    "entities": "34419075",
+    "entities": 34419075,
     "md5": "9dfa81752a41cf938609628d26bac240",
-    "publications": "6779864",
-    "pubtypes": 752
+    "publications": {
+      "items": 6779864,
+      "size": 972359870
+    },
+    "pubtypes": 752,
+    "size": 17948553672
+  },
+  "2017-10-02": {
+    "classes": 579154,
+    "entities": 37190433,
+    "md5": "1ace7a72ebdb8563bd67b5180b215caf",
+    "publications": {
+      "items": 9318280,
+      "size": 1727144826
+    },
+    "pubtypes": 748,
+    "size": 22985983323
   }
 }

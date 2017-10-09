@@ -53,11 +53,11 @@ To find out which Wikidata items refer to bibliographic objects, we must extract
 
 First extract all truthy subclass-of statements:
 
-    make 20170626/wikidata-20170626-all.classes.csv
+    make 20170626/wikidata-20170626.classes.csv
 
 Then get all subclasses of Q732577 and Q191067 (the latter was missing as subclass of the former until mid-September 2017):
 
-    make 20170626/wikidata-20170626-all.pubtypes
+    make 20170626/wikidata-20170626.pubtypes
 
 The list of publication types is sorted and commited for reference.
 
@@ -65,11 +65,11 @@ The list of publication types is sorted and commited for reference.
 
 Extract all bibliographic items, with simplified truthy statements, based on the list of publication types:
 
-    make 20170626/wikidata-20170626-all.publications.ndjson.gz
+    make 20170626/wikidata-20170626.publications.ndjson.gz
 
 The number of bibliographic items is counted as following - it is also committed in git:
 
-    make 20170626/wikidata-20170626-all.publications.ids.count
+    make 20170626/wikidata-20170626.publications.ids.count
 
 **FIXME:**
 
@@ -92,9 +92,12 @@ To be done (especially CSL-JSON and MARCXML)
 
 File `stats.json` contains summarizing statistics:
 
-* md5: MD5 hash of the full Wikidata JSON dump
+* md5: MD5 hash of the full, uncompressed Wikidata JSON dump
+* size: size of compressed dump
 * entities: number of entities
-* publications: number of publication items
+* publications
+    * items: number of publication items
+    * size: size of compressed dump
 * pubtypes: number of publication types
 
 Run `make stats` in the base directory for updates.

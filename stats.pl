@@ -1,48 +1,47 @@
 #!/usr/bin/env perl
 use v5.14;
-use JSON;
+use JSON::PP;
 
-sub firstline { local (@ARGV) = $_[0]; my $c = <>; chomp($c); $c }
+# read file without last newline
+sub slurp { local (@ARGV) = $_[0]; chomp(my @a=<>); join "\n", @a; }
 
-my %stats = (
-    # number of all entities
-    entities => [ "all.ids.count", \&firstline ],
-
-    # number of publication entities
-    publications => [ "all.publications.ids.count", \&firstline ],
-
-    # number of publication types
-    pubtypes => [ "all.pubtypes",
-                  sub { local (@ARGV) = @_; @_=<>; scalar @_ } ],
-);
-
-my $summary = {};
+my $stats = decode_json(slurp('stats.json'));
 
 foreach my $date ( sort grep { -d $_ } glob('20??????') ) {
     my $isodate = $date;
     $isodate =~ s/(....)(..)(..)/$1-$2-$3/;
 
-    $summary->{$isodate} //= {};
+    my $stat = $stats->{$isodate} //= {};
+    my $pubs = $stat->{publications} //= {};
 
-    $summary->{$isodate}{md5} = firstline($_)
+    $stat->{md5} = slurp($_)
         for grep { -e $_ } ("$date/wikidata-$date-all.md5");
 
-    if (-e "$date/wikidata-$date-all.classes.csv" and
-        !-e "$date/wikidata-$date-all.classes.count") {
-        system("make $date/wikidata-$date-all.classes.count");
+    $stat->{entities} => 1*slurp($_)
+        for grep { -e $_ } ("$date/wikidata-$date-all.ids.count");
+
+    $stat->{size} = (stat $_)[7]
+        for grep { -e $_ } ("$date/wikidata-$date-all.json.gz");
+
+    $pubs->{size} = (stat $_)[7]
+        for grep { -e $_ } ("$date/wikidata-$date-publications.ndjson.gz");
+
+    # number of publication entities
+    $pubs->{items} = 1*slurp($_)
+        for grep { -e $_ } ("$date/wikidata-$date-publications.ids.count");
+
+    if (-e "$date/wikidata-$date.classes.csv" and
+        !-e "$date/wikidata-$date.classes.count") {
+        system("make $date/wikidata-$date.classes.count");
     }
 
-    $summary->{$isodate}{classes} = firstline($_)
-        for grep { -e $_ } ("$date/wikidata-$date-all.classes.count");
+    $stat->{classes} = 1*slurp($_)
+        for grep { -e $_ } ("$date/wikidata-$date.classes.count");
 
-    foreach my $name (keys %stats) {
-        my ($suffix, $count) = @{$stats{$name}};
-
-        my $file = "$date/wikidata-$date-$suffix";
-        if (-e $file) {
-            $summary->{$isodate}{$name} = $count->($file);
-        }
-    }
+    $stat->{pubtypes} = do { local (@ARGV) = $_; @_=<>; scalar @_ }
+        for grep { -e $_ } ("$date/wikidata-$date.pubtypes");
 }
 
-say encode_json($summary);
+# Serialize in same JSON form like `jq -S`
+open my $fh, '>', 'stats.json';
+print $fh JSON::PP->new->canonical->indent->indent_length(2)->space_after->encode($stats);
