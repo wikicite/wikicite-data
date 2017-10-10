@@ -17,7 +17,7 @@ foreach my $date ( sort grep { -d $_ } glob('20??????') ) {
     $stat->{md5} = slurp($_)
         for grep { -e $_ } ("$date/wikidata-$date-all.md5");
 
-    $stat->{entities} => 1*slurp($_)
+    $stat->{entities} = 1*slurp($_)
         for grep { -e $_ } ("$date/wikidata-$date-all.ids.count");
 
     $stat->{size} = (stat $_)[7]

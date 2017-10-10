@@ -29,6 +29,28 @@
     "pubtypes": 232,
     "size": 5390838831
   },
+  "2016-09-12": {
+    "classes": 1213670,
+    "entities": 23799926,
+    "md5": "2ff415def6e2e97dccfc711104cb2e4e",
+    "publications": {
+      "items": 1110295,
+      "size": 82844211
+    },
+    "pubtypes": 408,
+    "size": 8625592681
+  },
+  "2017-01-02": {
+    "classes": 1298031,
+    "entities": 24683696,
+    "md5": "60df22b41c16bac3bccf3a8adde11398",
+    "publications": {
+      "items": 1410624,
+      "size": 130093261
+    },
+    "pubtypes": 667,
+    "size": 9817885202
+  },
   "2017-06-26": {
     "entities": 26938400,
     "md5": "21b5ccddae690ccd63eda16e83a1f591",
