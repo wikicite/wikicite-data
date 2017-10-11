@@ -26,6 +26,9 @@ foreach my $date ( sort grep { -d $_ } glob('20??????') ) {
     $pubs->{size} = (stat $_)[7]
         for grep { -e $_ } ("$date/wikidata-$date-publications.ndjson.gz");
 
+    $pubs->{citations} = system('wc','-l',$_)
+        for grep { -e $_ } ("$date/wikidata-$date-citations.csv");
+
     # number of publication entities
     $pubs->{items} = 1*slurp($_)
         for grep { -e $_ } ("$date/wikidata-$date-publications.ids.count");

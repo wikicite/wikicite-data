@@ -19,7 +19,7 @@ LOGFILE=make.log
 
 # comma-separated truthy class-superclass relations
 wikidata-%.classes.csv: wikidata-%-all.json.gz
-	zcat $< | ./wikidata-classes.js > $@
+	zcat $< | ./js/wikidata-classes.js > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 wikidata-%.classes.count: wikidata-%.classes.csv
@@ -28,12 +28,17 @@ wikidata-%.classes.count: wikidata-%.classes.csv
 
 # publication classes
 wikidata-%.pubtypes: wikidata-%.classes.csv
-	./subclasses.js Q732577 Q191067 < $< | sort > $@
+	./js/subclasses.js Q732577 Q191067 < $< | sort > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # bibliographic items
 wikidata-%-publications.ndjson.gz: wikidata-%-all.json.gz wikidata-%.pubtypes
-	zcat $< | ./wikicite-extract.js $(word 2,$^) | gzip -9 > $@
+	zcat $< | ./js/wikicite-extract.js $(word 2,$^) | gzip -9 > $@
+	@echo `date +%s:` $@ >> ${LOGFILE}
+
+# citations
+wikidata-%-citations.csv: wikidata-%-publications.ndjson.gz
+	zcat $< | ./js/citations.js > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # entity labels
