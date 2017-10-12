@@ -3,6 +3,7 @@
     "entities": 16408788,
     "md5": "528ce97986542e64ab4d637ff4babdc0",
     "publications": {
+      "citations": 0,
       "items": 53423,
       "size": 3342391
     },
@@ -23,6 +24,7 @@
     "entities": 18557330,
     "md5": "7b8e60c5ed6185f4f993cf445a808140",
     "publications": {
+      "citations": 0,
       "items": 294548,
       "size": 12673380
     },
@@ -31,7 +33,10 @@
   },
   "2016-01-04": {
     "classes": 335629,
+    "entities": 19360836,
+    "md5": "c7f6a2b592fb031e6b3022d53bad48fc",
     "publications": {
+      "citations": 0,
       "items": 655557,
       "size": 39864249
     },
@@ -43,6 +48,7 @@
     "entities": 23799926,
     "md5": "2ff415def6e2e97dccfc711104cb2e4e",
     "publications": {
+      "citations": 501365,
       "items": 1110295,
       "size": 82844211
     },
@@ -62,7 +68,10 @@
   },
   "2017-02-06": {
     "classes": 1313037,
+    "entities": 25163528,
+    "md5": "2d815ea1c19815d81d6924d0f3c1e826",
     "publications": {
+      "citations": 2062298,
       "items": 1662539,
       "size": 180368656
     },
@@ -74,6 +83,17 @@
     "md5": "21b5ccddae690ccd63eda16e83a1f591",
     "publications": {},
     "pubtypes": 747
+  },
+  "2017-07-31": {
+    "classes": 555696,
+    "entities": 30131717,
+    "publications": {
+      "citations": 3376216,
+      "items": 3282215,
+      "size": 432358583
+    },
+    "pubtypes": 731,
+    "size": 14882882290
   },
   "2017-08-21": {
     "entities": 33460503,
@@ -88,6 +108,7 @@
     "entities": 34419075,
     "md5": "9dfa81752a41cf938609628d26bac240",
     "publications": {
+      "citations": 5880890,
       "items": 6779864,
       "size": 972359870
     },
