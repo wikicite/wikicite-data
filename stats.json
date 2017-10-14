@@ -98,9 +98,6 @@
   "2017-08-21": {
     "entities": 33460503,
     "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
-    "publications": {
-      "size": 74796218
-    },
     "pubtypes": 713,
     "size": 16941074916
   },
@@ -120,6 +117,7 @@
     "entities": 37190433,
     "md5": "1ace7a72ebdb8563bd67b5180b215caf",
     "publications": {
+      "citations": 35991606,
       "items": 9318280,
       "size": 1727144826
     },
