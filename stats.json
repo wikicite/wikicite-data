@@ -95,6 +95,13 @@
     "pubtypes": 731,
     "size": 14882882290
   },
+  "2017-08-14": {
+    "classes": 1361355,
+    "entities": 32346937,
+    "md5": "07767aee54eff61c8cb970f355e7af76",
+    "pubtypes": 732,
+    "size": 16599263718
+  },
   "2017-08-21": {
     "entities": 33460503,
     "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
@@ -123,5 +130,17 @@
     },
     "pubtypes": 748,
     "size": 22985983323
+  },
+  "2017-10-16": {
+    "classes": 1381815,
+    "entities": 37726589,
+    "md5": "9fbb10c5a79948f0e88950cdf27ebeb5",
+    "publications": {
+      "citations": 36057634,
+      "items": 9816759,
+      "size": 1892790925
+    },
+    "pubtypes": 757,
+    "size": 23748470358
   }
 }
