@@ -60,6 +60,7 @@
     "entities": 24683696,
     "md5": "60df22b41c16bac3bccf3a8adde11398",
     "publications": {
+      "citations": 1216385,
       "items": 1410624,
       "size": 130093261
     },
@@ -99,6 +100,11 @@
     "classes": 1361355,
     "entities": 32346937,
     "md5": "07767aee54eff61c8cb970f355e7af76",
+    "publications": {
+      "citations": 3376272,
+      "items": 5020856,
+      "size": 679363662
+    },
     "pubtypes": 732,
     "size": 16599263718
   },
