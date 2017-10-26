@@ -1,4 +1,5 @@
 LOGFILE=make.log
+WDFILTER=./node_modules/wikidata-filter/bin/wikidata-filter
 
 # keep intermediate targets
 .SECONDARY:
@@ -24,6 +25,11 @@ wikidata-%.classes.csv: wikidata-%-all.json.gz
 
 wikidata-%.classes.count: wikidata-%.classes.csv
 	awk -F, '{print $$1;print $$2}' $< | sort | uniq | wc -l > $@
+	@echo `date +%s:` $@ >> ${LOGFILE}
+
+# properties
+wikidata-%-properties.ndjson.gz: wikidata-%-all.json.gz
+	zcat $< | ${WDFILTER} --type property | gzip -9 > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # publication classes
