@@ -160,5 +160,17 @@
     },
     "pubtypes": 777,
     "size": 24613157992
+  },
+  "2017-11-20": {
+    "classes": 1385469,
+    "entities": 38823130,
+    "md5": "3cc7a28b16134d308954f377a2aa0a52",
+    "publications": {
+      "citations": 36633611,
+      "items": 10700558,
+      "size": 2102125204
+    },
+    "pubtypes": 660,
+    "size": 25133176226
   }
 }
