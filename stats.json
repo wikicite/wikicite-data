@@ -172,5 +172,29 @@
     },
     "pubtypes": 660,
     "size": 25133176226
+  },
+  "2017-12-04": {
+    "classes": 1364909,
+    "entities": 40182194,
+    "md5": "33bdeb3b403ee0e2f1dcabd53058344b",
+    "publications": {
+      "citations": 36634140,
+      "items": 11989107,
+      "size": 2355031945
+    },
+    "pubtypes": 646,
+    "size": 26260084196
+  },
+  "2017-12-11": {
+    "classes": 1347750,
+    "entities": 40682551,
+    "md5": "d7c4c9a3179a875143101527d3e74c94",
+    "publications": {
+      "citations": 36634264,
+      "items": 12442885,
+      "size": 2445049625
+    },
+    "pubtypes": 654,
+    "size": 26692788966
   }
 }
