@@ -41,7 +41,7 @@ foreach my $date ( sort grep { -d $_ } glob('20??????') ) {
     $stat->{classes} = 1*slurp($_)
         for grep { -e $_ } ("$date/wikidata-$date.classes.count");
 
-    $stat->{pubtypes} = do { local (@ARGV) = $_; @_=<>; scalar @_ }
+    $pubs->{types} = do { local (@ARGV) = $_; @_=<>; scalar @_ }
         for grep { -e $_ } ("$date/wikidata-$date.pubtypes");
 }
 

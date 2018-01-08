@@ -5,9 +5,9 @@
     "publications": {
       "citations": 0,
       "items": 53423,
-      "size": 3342391
+      "size": 3342391,
+      "types": 166
     },
-    "pubtypes": 166,
     "size": 3546444139
   },
   "2015-03-30": {
@@ -15,9 +15,9 @@
     "entities": 17554608,
     "md5": "7fccd26b3152123fe6d4e8b789476e09",
     "publications": {
-      "items": 95467
+      "items": 95467,
+      "types": 195
     },
-    "pubtypes": 195,
     "size": 4393787930
   },
   "2015-09-21": {
@@ -26,9 +26,9 @@
     "publications": {
       "citations": 0,
       "items": 294548,
-      "size": 12673380
+      "size": 12673380,
+      "types": 232
     },
-    "pubtypes": 232,
     "size": 5390838831
   },
   "2016-01-04": {
@@ -38,9 +38,9 @@
     "publications": {
       "citations": 0,
       "items": 655557,
-      "size": 39864249
+      "size": 39864249,
+      "types": 298
     },
-    "pubtypes": 298,
     "size": 6138323586
   },
   "2016-09-12": {
@@ -50,9 +50,9 @@
     "publications": {
       "citations": 501365,
       "items": 1110295,
-      "size": 82844211
+      "size": 82844211,
+      "types": 408
     },
-    "pubtypes": 408,
     "size": 8625592681
   },
   "2017-01-02": {
@@ -62,9 +62,9 @@
     "publications": {
       "citations": 1216385,
       "items": 1410624,
-      "size": 130093261
+      "size": 130093261,
+      "types": 667
     },
-    "pubtypes": 667,
     "size": 9817885202
   },
   "2017-02-06": {
@@ -74,16 +74,17 @@
     "publications": {
       "citations": 2062298,
       "items": 1662539,
-      "size": 180368656
+      "size": 180368656,
+      "types": 677
     },
-    "pubtypes": 677,
     "size": 10495739350
   },
   "2017-06-26": {
     "entities": 26938400,
     "md5": "21b5ccddae690ccd63eda16e83a1f591",
-    "publications": {},
-    "pubtypes": 747
+    "publications": {
+      "types": 747
+    }
   },
   "2017-07-31": {
     "classes": 555696,
@@ -91,9 +92,9 @@
     "publications": {
       "citations": 3376216,
       "items": 3282215,
-      "size": 432358583
+      "size": 432358583,
+      "types": 731
     },
-    "pubtypes": 731,
     "size": 14882882290
   },
   "2017-08-14": {
@@ -103,15 +104,17 @@
     "publications": {
       "citations": 3376272,
       "items": 5020856,
-      "size": 679363662
+      "size": 679363662,
+      "types": 732
     },
-    "pubtypes": 732,
     "size": 16599263718
   },
   "2017-08-21": {
     "entities": 33460503,
     "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
-    "pubtypes": 713,
+    "publications": {
+      "types": 713
+    },
     "size": 16941074916
   },
   "2017-09-04": {
@@ -120,9 +123,9 @@
     "publications": {
       "citations": 5880890,
       "items": 6779864,
-      "size": 972359870
+      "size": 972359870,
+      "types": 752
     },
-    "pubtypes": 752,
     "size": 17948553672
   },
   "2017-10-02": {
@@ -132,9 +135,9 @@
     "publications": {
       "citations": 35991606,
       "items": 9318280,
-      "size": 1727144826
+      "size": 1727144826,
+      "types": 748
     },
-    "pubtypes": 748,
     "size": 22985983323
   },
   "2017-10-16": {
@@ -144,9 +147,9 @@
     "publications": {
       "citations": 36057634,
       "items": 9816759,
-      "size": 1892790925
+      "size": 1892790925,
+      "types": 757
     },
-    "pubtypes": 757,
     "size": 23748470358
   },
   "2017-11-06": {
@@ -156,9 +159,9 @@
     "publications": {
       "citations": 36633310,
       "items": 10293918,
-      "size": 2019525709
+      "size": 2019525709,
+      "types": 777
     },
-    "pubtypes": 777,
     "size": 24613157992
   },
   "2017-11-20": {
@@ -168,9 +171,9 @@
     "publications": {
       "citations": 36633611,
       "items": 10700558,
-      "size": 2102125204
+      "size": 2102125204,
+      "types": 660
     },
-    "pubtypes": 660,
     "size": 25133176226
   },
   "2017-12-04": {
@@ -180,9 +183,9 @@
     "publications": {
       "citations": 36634140,
       "items": 11989107,
-      "size": 2355031945
+      "size": 2355031945,
+      "types": 646
     },
-    "pubtypes": 646,
     "size": 26260084196
   },
   "2017-12-11": {
@@ -192,9 +195,9 @@
     "publications": {
       "citations": 36634264,
       "items": 12442885,
-      "size": 2445049625
+      "size": 2445049625,
+      "types": 654
     },
-    "pubtypes": 654,
     "size": 26692788966
   }
 }

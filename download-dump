@@ -13,7 +13,7 @@ then
         echo ${DATE}/${FILE}
         mkdir -p $DATE
         cd $DATE
-        wget -N $URL
+        wget -q -N $URL
         STATUS=$?
         cd -
         exit $?
