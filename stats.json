@@ -246,5 +246,17 @@
       "types": 692
     },
     "size": 29992077739
+  },
+  "2018-03-12": {
+    "classes": 1372714,
+    "entities": 45435978,
+    "md5": "bbe5fbd67f52799409ec1460ccbbb749",
+    "publications": {
+      "citations": 36636510,
+      "items": 15642254,
+      "size": 3101907506,
+      "types": 688
+    },
+    "size": 30643243249
   }
 }
