@@ -258,5 +258,17 @@
       "types": 688
     },
     "size": 30643243249
+  },
+  "2018-04-02": {
+    "classes": 1380840,
+    "entities": 46253348,
+    "md5": "c6b6eec63158c7ef0aaf89caacfdf40c",
+    "publications": {
+      "citations": 36636050,
+      "items": 16325552,
+      "size": 3242970209,
+      "types": 701
+    },
+    "size": 31445496877
   }
 }
