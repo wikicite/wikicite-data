@@ -330,5 +330,17 @@
       "types": 909
     },
     "size": 41620355287
+  },
+  "2018-10-01": {
+    "classes": 1489233,
+    "entities": 50377904,
+    "md5": "28bc8ee301b62aba2a0b5e4bb72056ec",
+    "publications": {
+      "citations": 120952076,
+      "items": 19266984,
+      "size": 4316483635,
+      "types": 1045
+    },
+    "size": 43727095247
   }
 }
