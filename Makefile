@@ -51,6 +51,11 @@ wikidata-%-citations.csv: wikidata-%-publications.ndjson.gz
 	zcat $< | ./js/citations.js > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
+# identifiers
+wikidata-%.identifiers.tsv: wikidata-%-all.json.gz identifier-properties
+	zcat $< | ./js/wikidata-identifiers.js identifier-properties > $@
+	@echo `date +%s:` $@ >> ${LOGFILE}
+
 # entity labels
 %.labels.ndjson: %.json.gz
 	zcat $< | head -n-1 | tail -n+2 | sed 's/,$$//' | \
