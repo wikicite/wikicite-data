@@ -52,8 +52,8 @@ wikidata-%-citations.csv: wikidata-%-publications.ndjson.gz
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # identifiers
-wikidata-%.identifiers.tsv: wikidata-%-all.json.gz identifier-properties
-	zcat $< | ./js/wikidata-identifiers.js identifier-properties > $@
+wikidata-%-identifiers.tsv: wikidata-%-all.json.gz
+	zcat $< | ./js/identifiers.js > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # entity labels
@@ -62,8 +62,12 @@ wikidata-%.identifiers.tsv: wikidata-%-all.json.gz identifier-properties
 		jq -c '{id:.id,labels:(.labels|map_values(.value))}' > $@
 	echo $@ >> ${LOGFILE} 
 
+# current identifier properties
+identifier-properties.json: 
+	./js/identifier-properties.js > $@
+
 # create statistics
-.PHONY: stats.json
+.PHONY: stats.json identifier-properties.json
 stats: stats.json
 stats.json:
 	./stats.pl
