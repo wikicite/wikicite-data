@@ -52,8 +52,8 @@ wikidata-%-citations.csv: wikidata-%-publications.ndjson.gz
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # identifiers
-wikidata-%-identifiers.tsv: wikidata-%-all.json.gz
-	zcat $< | ./js/identifiers.js > $@
+wikidata-%-identifiers.tsv.gz: wikidata-%-all.json.gz
+	zcat $< | ./js/identifiers.js | gzip -9 > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # entity labels
