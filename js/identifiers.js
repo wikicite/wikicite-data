@@ -9,24 +9,20 @@ const identifierProperties = JSON.parse(fs.readFileSync('identifier-properties.j
 
 // helper functions
 const pids = claims => Object.keys(claims).sort((a,b) => a.substr(1) - b.substr(1))
-const identifierPids = pids(identifierProperties)
-
-// header row
-process.stdout.write(tsv(['qid',...identifierPids]))
+const identifierPids = new Set(pids(identifierProperties))
 
 parser(process.stdin, { type: 'item' })
 .filter(entity => {
   const claims = entity.claims || {}
-  const claimPids = new Set(Object.keys(claims))
-  const row = identifierPids.map( p => {
-    if (claimPids.has(p)) {
-      let values = wdk.simplify.propertyClaims(claims[p])
-      return values.join('\xa0') // separate repeated ids by NBSP
-    } else {
-      return ''
+  const id = entity.id
+  let rows = []
+  for (let p in claims) {
+    if (identifierPids.has(p)) {
+      const values = wdk.simplify.propertyClaims(claims[p])
+      values.forEach(v => {
+        console.log(`${id} ${p} ${v}`)
+      })
     }
-  })
-  return tsv([entity.id, ...row])
+  }
 })
-.pipe(process.stdout)
 
