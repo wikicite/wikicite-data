@@ -366,5 +366,17 @@
       "types": 1535
     },
     "size": 49178536308
+  },
+  "2018-12-17": {
+    "classes": 1521903,
+    "entities": 53208215,
+    "md5": "b845e3dc66eed1bdd0daa31782b1f0e3",
+    "publications": {
+      "citations": 174259894,
+      "items": 21783796,
+      "size": 5050547172,
+      "types": 1584
+    },
+    "size": 50312739390
   }
 }
