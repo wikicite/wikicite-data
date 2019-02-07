@@ -10,8 +10,8 @@
     "rdflib": "^0.16.3",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
-    "wikidata-filter": "^2.1.0",
-    "wikidata-sdk": "^5.2.5"
+    "wikidata-filter": "^2.3.1",
+    "wikidata-sdk": "^5.15.10"
   },
   "devDependencies": {
     "standard": "^10.0"
