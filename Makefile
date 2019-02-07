@@ -42,6 +42,10 @@ wikidata-%-publications.ndjson.gz: wikidata-%-all.json.gz wikidata-%.pubtypes
 	zcat $< | ./js/wikicite-extract.js $(word 2,$^) | gzip -9 > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
+# properties used in bibliographic items
+property-count-per-publication-%.csv: wikidata-%-publications.ndjson.gz
+	zcat $< | jq -r '.claims|keys[]' | ./pl/count-ids.pl > $@
+
 # DOIs of bibliographic items
 wikidata-%-dois.csv: wikidata-%-publications.ndjson.gz
 	zcat $< | ./js/doi.js > $@
