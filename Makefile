@@ -61,9 +61,9 @@ wikidata-%-identifiers.tsv.gz: wikidata-%-all.json.gz
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
 # entity labels
-%.labels.ndjson: %.json.gz
+%.labels.ndjson.gz: %.json.gz
 	zcat $< | head -n-1 | tail -n+2 | sed 's/,$$//' | \
-		jq -c '{id:.id,labels:(.labels|map_values(.value))}' > $@
+		jq -c '{id:.id,labels:(.labels|map_values(.value))}' | gzip -9 > $@
 	echo $@ >> ${LOGFILE} 
 
 # current identifier properties
