@@ -23,6 +23,10 @@ wikidata-%.classes.csv: wikidata-%-all.json.gz
 	zcat $< | ./js/wikidata-classes.js > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
 
+wikidata-%.instances.csv: wikidata-%-all.json.gz
+	zcat $< | ./js/wikidata-instances.js > $@
+	@echo `date +%s:` $@ >> ${LOGFILE}
+
 wikidata-%.classes.count: wikidata-%.classes.csv
 	awk -F, '{print $$1;print $$2}' $< | sort | uniq | wc -l > $@
 	@echo `date +%s:` $@ >> ${LOGFILE}
