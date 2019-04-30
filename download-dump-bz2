@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Download a Wikidata JSON dump unless it has already been downloaded
+TIME=/usr/bin/time
+
+if [[ "$1" =~ ^20[1-9][0-9][01][0-9][0-9][0-9]$ ]]
+then
+    DATE=$1
+    FILE=wikidata-${DATE}-all.json.bz2
+    URL=https://dumps.wikimedia.org/wikidatawiki/entities/${DATE}/${FILE}
+
+    if curl --output /dev/null --silent --head --fail "$URL"
+    then
+        echo ${DATE}/${FILE}
+        mkdir -p $DATE
+        cd $DATE
+        $TIME -o wget.log wget -q -N "$URL"
+        STATUS=$?
+        cd -
+        exit $?
+    else
+        echo "URL not found: $URL" >&2
+    fi
+else
+    echo "Usage: $0 YYYYMMDD" >&2
+fi
+
+exit 404
