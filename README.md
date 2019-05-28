@@ -65,11 +65,11 @@ The list of publication types is sorted and commited for reference.
 
 Extract all bibliographic items, with simplified truthy statements, based on the list of publication types:
 
-    make 20170626/wikidata-20170626.publications.ndjson.gz
+    make 20170626/wikidata-20170626-publications.ndjson.gz
 
 The number of bibliographic items is counted as following - it is also committed in git:
 
-    make 20170626/wikidata-20170626.publications.ids.count
+    make 20170626/wikidata-20170626-publications.ids.count
 
 **FIXME:**
 
