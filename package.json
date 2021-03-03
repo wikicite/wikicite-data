@@ -11,7 +11,7 @@
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "wikibase-sdk": "^7.9.1",
-    "wikidata-filter": "^2.4.0"
+    "wikibase-dump-filter": "^5.0.5"
   },
   "devDependencies": {
     "standard": "^10.0"
@@ -20,6 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "wikibase",
     "wikidata",
     "wikicite"
   ],
