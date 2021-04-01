@@ -2,28 +2,25 @@
 const wdClaims = require('./claims.js')
 
 module.exports = function (classes) {
-  // store classes in an object for fast lookup
-  const classMap = classes.reduce(function (map, qid) {
-    map[qid] = true
-    return map
-  }, {})
+  // store classes in a set for fast lookup
+  const classSet = new Set(classes)
 
   return (item) => {
     if (item.type !== 'item' || !item.claims || !item.claims.P31) return null
 
         // simplify P31 statements only to quickly reject
     const P31 = item.claims.P31.filter(wdClaims.truthy)
-    if (!isInstanceOfAny(P31, classMap)) return null
+    if (!isInstanceOfAny(P31, classSet)) return null
 
     return item
   }
 }
 
-const isInstanceOfAny = (P31, classes) => {
-  for (var i = 0; i < P31.length; i++) {
-    if ('datavalue' in P31[i].mainsnak) {
-      const qid = 'Q' + P31[i].mainsnak.datavalue.value['numeric-id']
-      if (qid in classes) return true
+const isInstanceOfAny = (P31, classSet) => {
+  for (const claim of P31) {
+    if ('datavalue' in claim.mainsnak) {
+      const qid = 'Q' + claim.mainsnak.datavalue.value['numeric-id']
+      if (classSet.has(qid)) return true
     }
   }
   return false
