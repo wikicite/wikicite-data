@@ -10,8 +10,8 @@
     "rdflib": "^0.16.3",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
-    "wikibase-sdk": "^7.9.1",
-    "wikibase-dump-filter": "^5.0.5"
+    "wikibase-dump-filter": "^5.0.5",
+    "wikibase-sdk": "^7.9.1"
   },
   "devDependencies": {
     "standard": "^10.0"

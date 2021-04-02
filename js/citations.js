@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const { parser } = require('wikidata-filter')
+const { getEntitiesStream } = require('wikibase-dump-filter')
+const { propertyClaims: simplifyPropertyClaims } = require('wikibase-sdk').simplify
 
-parser(process.stdin)    
-  .filter(item => item.claims  
-      ? (item.claims.P2860 || [])
-        .map(qid => item.id + ',' + qid + '\n').join('')
-    : null
-  )
+getEntitiesStream(process.stdin)    
+  .filterAndMap(item => {
+    if (item.claims && item.claims.P2860) {
+      return simplifyPropertyClaims(item.claims.P2860)
+      .map(qid => item.id + ',' + qid + '\n')
+      .join('')
+    }
+  })
   .pipe(process.stdout)
