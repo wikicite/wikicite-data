@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
-const wdk = require('wikidata-sdk')
-const { parser, serializer } = require('wikidata-filter')
+const wdk = require('wikibase-sdk')
+const { parseEntitiesStream, serialize } = require('wikibase-dump-filter')
 const tsv = row => row.join("\t") + "\n"
 
 const identifierProperties = JSON.parse(fs.readFileSync('identifier-properties.json'))
@@ -11,7 +11,7 @@ const identifierProperties = JSON.parse(fs.readFileSync('identifier-properties.j
 const pids = claims => Object.keys(claims).sort((a,b) => a.substr(1) - b.substr(1))
 const identifierPids = new Set(pids(identifierProperties))
 
-parser(process.stdin, { type: 'item' })
+parseEntitiesStream(process.stdin, { type: 'item' })
 .filter(entity => {
   const claims = entity.claims || {}
   const id = entity.id

@@ -4,16 +4,15 @@
  * Extract item, superclass pairs in CSV format from Wikidata dump.
  */
 
-const { parser, filter } = require('wikidata-filter')
-const { simplify } = require('wikidata-sdk')
+const { getEntitiesStream } = require('wikibase-dump-filter')
+const { propertyClaims: simplifyPropertyClaims } = require('wikibase-sdk').simplify
 
-parser(process.stdin)
-.filter(filter({type: 'item'}))
-.filter(item =>
-  item.claims && item.claims.P279
-    ? simplify.propertyClaims(item.claims.P279)
-    .map(qid => item.id + ',' + qid)
-    .join('\n') + '\n'
-  : null
-)
+getEntitiesStream(process.stdin)
+.filterAndMap(item => {
+  if (item.type === 'item' && item.claims && item.claims.P279) {
+    return simplifyPropertyClaims(item.claims.P279)
+      .map(qid => item.id + ',' + qid)
+      .join('\n') + '\n'
+  }
+})
 .pipe(process.stdout)

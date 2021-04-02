@@ -437,9 +437,21 @@
     "classes": 2437318,
     "publications": {
       "items": 29541120,
-      "types": 2109,
-      "size": 6679166976
+      "size": 6679166976,
+      "types": 2109
     },
     "size": 84711922095
-   }
+  },
+  "2021-01-11": {
+    "classes": 2498915,
+    "entities": 91606784,
+    "md5": "978c05a4badb67c84af782ff12863865",
+    "publications": {
+      "citations": 174469995,
+      "items": 39619921,
+      "size": 49767473864,
+      "types": 2819
+    },
+    "size": 91822930484
+  }
 }

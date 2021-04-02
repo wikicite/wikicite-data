@@ -1,5 +1,5 @@
 LOGFILE=make.log
-WDFILTER=./node_modules/wikidata-filter/bin/wikidata-filter
+WDFILTER=./node_modules/wikibase-dump-filter/bin/wikibase-dump-filter
 
 # keep intermediate targets
 .SECONDARY:

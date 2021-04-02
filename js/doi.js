@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
-const { parser } = require('wikidata-filter')
+const { parseEntitiesStream } = require('wikibase-dump-filter')
 
 // get all items with DOI statement (http://www.wikidata.org/entity/P356)
-parser(process.stdin)  
+parserEntitiesStream(process.stdin, { type: 'both' })
 .filter( item => item.claims && item.claims.P356 ? item : null )
 // print QID, DOI as comma-separated values
 .filter(

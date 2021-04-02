@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Get Wikidata:Identifier properties (any datatype)
-const wdk = require('wikidata-sdk')
+const wdk = require('wikibase-sdk')
 const request = require('request-promise-native')
 
 const query = `

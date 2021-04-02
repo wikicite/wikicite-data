@@ -6,3 +6,8 @@ build
 *.gz
 *.classes.csv
 *.labels.ndjson
+2017*/
+2018*/
+2019*/
+2020*/
+2021*/

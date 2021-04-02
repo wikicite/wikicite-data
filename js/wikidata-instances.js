@@ -4,11 +4,11 @@
  * Extract item, class pairs in CSV format from Wikidata dump.
  */
 
-const { parser, filter } = require('wikidata-filter')
-const { simplify } = require('wikidata-sdk')
+const { parseEntitiesStream, filterFormatAndSerialize } = require('wikibase-dump-filter')
+const { simplify } = require('wikibase-sdk')
 
-parser(process.stdin)
-.filter(filter({type: 'item'}))
+parseEntitiesStream(process.stdin, { type: 'both' })
+.filter(filterFormatAndSerialize({type: 'item'}))
 .filter(item =>
   item.claims && item.claims.P31
     ? simplify.propertyClaims(item.claims.P31)
