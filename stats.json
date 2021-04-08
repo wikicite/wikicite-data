@@ -15,6 +15,7 @@
     "entities": 17554608,
     "md5": "7fccd26b3152123fe6d4e8b789476e09",
     "publications": {
+      "citations": 0,
       "items": 95467,
       "types": 195
     },
@@ -48,6 +49,7 @@
     "entities": 21225522,
     "md5": "d98b6b574bde11ec51d36d8c2e287431",
     "publications": {
+      "citations": 0,
       "items": 721954,
       "size": 48118980,
       "types": 350
@@ -91,11 +93,16 @@
     "size": 10495739350
   },
   "2017-06-26": {
+    "classes": 1329473,
     "entities": 26938400,
     "md5": "21b5ccddae690ccd63eda16e83a1f591",
     "publications": {
+      "citations": 3376024,
+      "items": 2098128,
+      "size": 1205790646,
       "types": 747
-    }
+    },
+    "size": 13115137135
   },
   "2017-07-31": {
     "classes": 555696,
@@ -121,10 +128,14 @@
     "size": 16599263718
   },
   "2017-08-21": {
+    "classes": 1363457,
     "entities": 33460503,
     "md5": "ac6d32c72e1cbd80e0af98e10d2f796b",
     "publications": {
-      "types": 713
+      "citations": 3376286,
+      "items": 5968737,
+      "size": 4148553735,
+      "types": 735
     },
     "size": 16941074916
   },
@@ -426,21 +437,39 @@
   },
   "2020-03-02": {
     "classes": 2408530,
+    "entities": 78540029,
+    "md5": "dcc88a3c50cd401a29a85645df41f515",
     "publications": {
-      "items": 29742336,
-      "size": 6665308019,
-      "types": 2121
+      "citations": 174246502,
+      "items": 33712229,
+      "size": 43412100768,
+      "types": 2213
     },
     "size": 76005717584
   },
   "2020-05-18": {
     "classes": 2437318,
+    "entities": 85883866,
+    "md5": "6ee1435129af5e294e8c930b207fe88e",
     "publications": {
-      "items": 29541120,
-      "size": 6679166976,
+      "citations": 174259524,
+      "items": 36868138,
+      "size": 46751873210,
       "types": 2109
     },
     "size": 84711922095
+  },
+  "2020-09-21": {
+    "classes": 2463966,
+    "entities": 89200861,
+    "md5": "f47fd96b5c05e300e7115c02a8a1de32",
+    "publications": {
+      "citations": 174295549,
+      "items": 38608606,
+      "size": 48833180130,
+      "types": 2632
+    },
+    "size": 89136251598
   },
   "2021-01-11": {
     "classes": 2498915,
