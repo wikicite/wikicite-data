@@ -525,5 +525,17 @@
       "types": 4115
     },
     "size": 109172279904
+  },
+  "2022-12-26": {
+    "classes": 2728012,
+    "entities": 100185169,
+    "md5": "16afa27acfeabb932b9ed1e8831aec20",
+    "publications": {
+      "citations": 287712262,
+      "items": 41979244,
+      "size": 65034452203,
+      "types": 4983
+    },
+    "size": 120455028427
   }
 }
