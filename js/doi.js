@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const { parseEntitiesStream } = require('wikibase-dump-filter')
+const { getEntitiesStream } = require('wikibase-dump-filter')
+const { propertyClaims: simplifyPropertyClaims } = require('wikibase-sdk').simplify
 
 // get all items with DOI statement (http://www.wikidata.org/entity/P356)
-parserEntitiesStream(process.stdin, { type: 'both' })
-.filter( item => item.claims && item.claims.P356 ? item : null )
-// print QID, DOI as comma-separated values
-.filter(
-  item => item.claims.P356.map( doi => item.id + ',' + doi + '\n').join('')
-)
-.pipe(process.stdout)
+// and print QID, DOI as comma-separated values
+getEntitiesStream(process.stdin)
+  .filterAndMap(item => {
+    if (item.claims && item.claims.P356) {
+      return simplifyPropertyClaims(item.claims.P356)
+        .map(doi => item.id + ',' + doi + '\n')
+        .join('')
+    }
+  })
+  .pipe(process.stdout)
