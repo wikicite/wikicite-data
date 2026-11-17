@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 // Get Wikidata:Identifier properties (any datatype)
-const wdk = require('wikibase-sdk')
-const request = require('request-promise-native')
+const wdk = require('wikibase-sdk')({
+  instance: 'https://www.wikidata.org',
+  sparqlEndpoint: 'https://query.wikidata.org/sparql'
+})
 
 const query = `
   SELECT DISTINCT ?p ?pLabel ?template {
@@ -13,7 +15,16 @@ const query = `
   }`
 const uri = wdk.sparqlQuery(query)
 
-request({uri, json: true})
+fetch(uri, {
+  headers: {
+    Accept: 'application/sparql-results+json',
+    'User-Agent': 'wikicite-data (https://github.com/wikicite/wikicite-data)'
+  }
+})
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
+    return res.json()
+  })
   .then(wdk.simplify.sparqlResults)
   .then(props => {
     props = props.reduce( 
